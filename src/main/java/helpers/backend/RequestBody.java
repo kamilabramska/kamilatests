@@ -1,4 +1,4 @@
-package helpers;
+package helpers.backend;
 
 public class RequestBody {
 
@@ -18,7 +18,7 @@ public class RequestBody {
 
     @Override
     public String toString() {
-        return "helpers.RequestBody{" +
+        return "helpers.backend.RequestBody{" +
                 "address='" + address + '\'' +
                 '}';
     }

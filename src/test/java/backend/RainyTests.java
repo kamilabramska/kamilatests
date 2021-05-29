@@ -1,10 +1,16 @@
 package backend;
 
-import helpers.RequestBody;
-import helpers.Requests;
-import helpers.Responses;
+import helpers.backend.RequestBody;
+import helpers.backend.Requests;
+import helpers.backend.Responses;
 
 import org.testng.annotations.Test;
+
+import static config.Constants.ErrorMessages.INVALID_MESSAGE;
+import static config.Constants.ErrorMessages.NOT_FOUND_MESSAGE;
+import static config.Constants.Stubs.EMPTY_PC;
+import static config.Constants.Stubs.INVALID_PC;
+import static config.Constants.Stubs.NOT_FOUND_PC;
 
 
 public class RainyTests {
@@ -12,26 +18,23 @@ public class RainyTests {
     String postCode;
 
     @Test
-    public void emptyPostCode ()
+    public void getErrorForEmptyPostCode ()
 
     {
-        postCode = "";
-        Responses.validateErrorResponse(Requests.postRequest(new RequestBody(postCode)), "Postcode not valid.");
+        Responses.validateErrorResponse(Requests.postRequest(new RequestBody(EMPTY_PC)), INVALID_MESSAGE);
     }
 
     @Test
-    public void invalidPostCode ()
+    public void getErrorForInvalidPostCode ()
 
     {
-        postCode = "EC1A 1BB";
-        Responses.validateErrorResponse(Requests.postRequest(new RequestBody(postCode)), "Postcode not valid.");
+        Responses.validateErrorResponse(Requests.postRequest(new RequestBody(INVALID_PC)), INVALID_MESSAGE);
     }
 
     @Test
-    public void notFoundPostCode ()
+    public void getErrorForNotFoundPostCode ()
 
     {
-        postCode = "B99 9AA";
-        Responses.validateErrorResponse(Requests.postRequest(new RequestBody(postCode)),"Postcode not found!");
+        Responses.validateErrorResponse(Requests.postRequest(new RequestBody(NOT_FOUND_PC)), NOT_FOUND_MESSAGE);
     }
 }

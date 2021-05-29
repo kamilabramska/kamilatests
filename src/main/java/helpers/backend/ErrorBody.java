@@ -1,4 +1,4 @@
-package helpers;
+package helpers.backend;
 
 public class ErrorBody {
 

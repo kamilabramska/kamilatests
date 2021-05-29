@@ -1,19 +1,18 @@
 package backend;
 
-import helpers.RequestBody;
-import helpers.Requests;
-import helpers.Responses;
+import helpers.backend.RequestBody;
+import helpers.backend.Requests;
+import helpers.backend.Responses;
 import org.testng.annotations.Test;
+
+import static config.Constants.Stubs.VALID_PC;
 
 public class SunnyTests {
 
-    String postCode;
-
     @Test
-    public void validPostCode ()
+    public void enterValidPostCodeAndCheckStatusCodeAndBodyModel ()
 
     {
-        postCode = "W6 0NW";
-        Responses.validateResponse(Requests.postRequest(new RequestBody(postCode)));
+        Responses.validateResponse(Requests.postRequest(new RequestBody(VALID_PC)));
     }
 }

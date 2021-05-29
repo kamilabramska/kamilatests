@@ -1,4 +1,4 @@
-package helpers;
+package helpers.backend;
 
 import config.Constants;
 import io.restassured.RestAssured;

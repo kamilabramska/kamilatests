@@ -1,15 +1,16 @@
-package helpers;
+package helpers.backend;
 
 import java.util.Date;
 
-public class DataElementHourly {
+public class Currently {
 
     private Date time;
     private String summary;
     private String icon;
+    private Integer nearestStormDistance;
+    private Integer nearestStormBearing;
     private Double precipIntensity;
     private Double precipProbability;
-    private String precipType;
     private Double temperature;
     private Double apparentTemperature;
     private Double dewPoint;
@@ -47,6 +48,22 @@ public class DataElementHourly {
         this.icon = icon;
     }
 
+    public Integer getNearestStormDistance() {
+        return nearestStormDistance;
+    }
+
+    public void setNearestStormDistance(Integer nearestStormDistance) {
+        this.nearestStormDistance = nearestStormDistance;
+    }
+
+    public Integer getNearestStormBearing() {
+        return nearestStormBearing;
+    }
+
+    public void setNearestStormBearing(Integer nearestStormBearing) {
+        this.nearestStormBearing = nearestStormBearing;
+    }
+
     public Double getPrecipIntensity() {
         return precipIntensity;
     }
@@ -61,14 +78,6 @@ public class DataElementHourly {
 
     public void setPrecipProbability(Double precipProbability) {
         this.precipProbability = precipProbability;
-    }
-
-    public String getPrecipType() {
-        return precipType;
-    }
-
-    public void setPrecipType(String precipType) {
-        this.precipType = precipType;
     }
 
     public Double getTemperature() {
@@ -169,13 +178,14 @@ public class DataElementHourly {
 
     @Override
     public String toString() {
-        return "DataElementHourly{" +
+        return "Currently{" +
                 "time=" + time +
                 ", summary='" + summary + '\'' +
                 ", icon='" + icon + '\'' +
+                ", nearestStormDistance=" + nearestStormDistance +
+                ", nearestStormBearing=" + nearestStormBearing +
                 ", precipIntensity=" + precipIntensity +
                 ", precipProbability=" + precipProbability +
-                ", precipType='" + precipType + '\'' +
                 ", temperature=" + temperature +
                 ", apparentTemperature=" + apparentTemperature +
                 ", dewPoint=" + dewPoint +
@@ -191,4 +201,3 @@ public class DataElementHourly {
                 '}';
     }
 }
-

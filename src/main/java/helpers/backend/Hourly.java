@@ -1,12 +1,12 @@
-package helpers;
+package helpers.backend;
 
 import java.util.List;
 
-public class Minutely {
+public class Hourly {
 
     private String summary;
     private String icon;
-    List<DataElementMinutely> data;
+    List<DataElementHourly> data;
 
     public String getSummary() {
         return summary;
@@ -24,17 +24,17 @@ public class Minutely {
         this.icon = icon;
     }
 
-    public List<DataElementMinutely> getData() {
+    public List<DataElementHourly> getData() {
         return data;
     }
 
-    public void setData(List<DataElementMinutely> data) {
+    public void setData(List<DataElementHourly> data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
-        return "Minutely{" +
+        return "Hourly{" +
                 "summary='" + summary + '\'' +
                 ", icon='" + icon + '\'' +
                 ", data=" + data +

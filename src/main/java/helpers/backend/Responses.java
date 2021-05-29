@@ -1,4 +1,4 @@
-package helpers;
+package helpers.backend;
 
 import io.restassured.response.Response;
 import org.testng.Assert;
